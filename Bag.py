@@ -5,4 +5,4 @@ class ChaosBag:
         self.contents = tokens
 
     def drawToken(self):
-        return random.choice(self.tokens)
+        return random.choice(self.contents)
