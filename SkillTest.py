@@ -4,6 +4,9 @@ class SkillTest:
         self.skill = skill
         self.ChaosBag = ChaosBag
 
+        self.takeSkillTest()
+
+    def takeSkillTest(self):
         draw = self.ChaosBag.drawToken()
 
         result = self.skill + draw.mod
