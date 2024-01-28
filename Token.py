@@ -10,6 +10,8 @@ class ChaosToken:
 
         if type == "Regular":
             self.Resolve = StandardResolution
+        elif type == "Autofail":
+            self.Resolve = AutofailResolution
 
 
 
@@ -22,3 +24,6 @@ def StandardResolution(token, skillValue, dificulty):
         outcome = "succeeded"
 
     return SkillTest.SkillTestResult(dificulty, result, outcome)
+
+def AutofailResolution(token, skillValue, dificulty):
+    return SkillTest.SkillTestResult(dificulty, 0, "failed")
