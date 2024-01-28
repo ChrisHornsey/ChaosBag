@@ -9,14 +9,7 @@ class SkillTest:
     def takeSkillTest(self):
         draw = self.ChaosBag.drawToken()
 
-        result = self.skill + draw.mod
-
-        if(result < self.dificulty):
-            outcome = "failed"
-        else:
-            outcome = "succeeded"
-
-        self.result = SkillTestResult(self.dificulty, result, outcome)
+        self.result = draw.Resolve(draw, self.skill, self.dificulty)
         
 class SkillTestResult:
     def __init__(self, dificulty, result, outcome):
